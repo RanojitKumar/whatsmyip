@@ -11,8 +11,16 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 nav ul {
@@ -20,7 +28,6 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
 }
 
 nav ul li {
@@ -31,6 +38,12 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
 }
 
 .container {
@@ -84,8 +97,8 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #34495e;
+button.copied {
+    background-color: #27ae60;
 }
 
 footer {
@@ -118,11 +131,26 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 600px) {
+    .menu-icon {
+        display: block;
+    }
+
     nav ul {
         flex-direction: column;
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        padding: 10px 0;
     }
 
     nav ul li {
-        margin: 5px 0;
+        margin: 10px 0;
     }
 }
